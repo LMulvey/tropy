@@ -34,7 +34,7 @@ en:
               command: 'app:clear-recent-projects'
         - type: 'separator'
         - &import
-          label: 'Import Photos …'
+          label: 'Import Photos…'
           command: 'app:import-photos'
           accelerator: 'CmdOrCtrl+Shift+I'
         - &consolidate
@@ -81,7 +81,7 @@ en:
           role: 'selectall'
         - type: 'separator'
         - &preferences
-          label: 'Prefere&nces …'
+          label: 'Prefere&nces…'
           accelerator: 'Shift+Control+S'
           command: 'app:open-preferences'
     - &view
@@ -148,50 +148,46 @@ en:
         - &forums
           label: 'Support Forums'
           command: 'app:open-forums'
-        - type: 'separator'
         - &license
           label: 'Software &License'
           command: 'app:open-license'
+        - type: 'separator'
         - &logs
           label: 'Show Log Files'
           command: 'app:open-logs'
-        - type: 'separator'
-        - &pluginsConfig
-          label: 'Edit Plugins Configuration'
-          command: 'app:open-plugins-config'
-        - &pluginsConfig
-          label: 'Install Plugin …'
-          command: 'app:install-plugin'
         - &plugins
           label: 'Show Plugins Folder'
           command: 'app:open-plugins-folder'
-        - type: 'separator'
-        - label: 'About %name'
-          command: 'app:about'
+        - &userData
+          label: 'Show User-Data Folder'
+          command: 'app:open-user-data'
         - type: 'separator'
         - &updaterCheck
           id: 'updater-check'
-          label: 'Check for Updates …'
+          label: 'Check for Updates…'
           command: 'app:check-for-updates'
           enabled: false
         - &updaterIsChecking
           id: 'updater-is-checking'
-          label: 'Fetching Latest Updates …'
+          label: 'Fetching Latest Updates…'
           enabled: false
           visible: false
         - &updaterInstall
           id: 'updater-install'
-          label: 'Install Updates …'
+          label: 'Install Updates…'
           command: 'app:install-updates'
           enabled: false
           visible: false
+        - type: 'separator'
+        - label: 'About %name'
+          command: 'app:about'
   darwin:
     - label: '%name'
       submenu:
         - label: 'About %name'
           command: 'app:about'
         - type: 'separator'
-        - label: 'Preferences …'
+        - label: 'Preferences…'
           accelerator: 'Command+,'
           command: 'app:open-preferences'
         - type: 'separator'
@@ -252,12 +248,11 @@ en:
       submenu:
         - *docs
         - *forums
-        - type: 'separator'
         - *license
-        - *logs
         - type: 'separator'
-        - *pluginsConfig
+        - *logs
         - *plugins
+        - *userData
         - type: 'separator'
         - *updaterCheck
         - *updaterIsChecking
