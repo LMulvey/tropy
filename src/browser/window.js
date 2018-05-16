@@ -58,7 +58,7 @@ module.exports = {
         options.disableAutoHideCursor = true
         if (!options.frame && EL_CAPITAN) {
           options.frame = true
-          options.titleBarStyle = options.titleBarStyle || 'hidden-inset'
+          options.titleBarStyle = options.titleBarStyle || 'hiddenInset'
         }
 
         data.aqua = AQUA[
@@ -102,6 +102,10 @@ module.exports = {
     for (let event of EVENTS) {
       win.on(event, () => { win.webContents.send('win', event) })
     }
+
+    win.on('page-title-updated', (event) => {
+      event.preventDefault()
+    })
 
     win.loadURL(format({
       protocol: 'file',
